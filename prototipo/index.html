@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Ventas</title>
+<link rel="stylesheet" href="css/estilos.css">
+<!--
+    Punto de entrada del prototipo.
+    Redirige automáticamente:
+      - al Dashboard si ya existe una sesión activa
+      - al Login si no hay sesión
+-->
+<script src="js/data.js"></script>
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script>
+    if(Auth.usuarioActual()){
+        window.location.replace('pages/dashboard.html');
+    }else{
+        window.location.replace('pages/login.html');
+    }
+</script>
+</head>
+<body class="login-body">
+    <div class="login-box">
+        <h2>Sistema Ventas</h2>
+        <p>Redirigiendo...</p>
+        <a href="pages/login.html" class="button-link">Ir al login</a>
+    </div>
+</body>
+</html>

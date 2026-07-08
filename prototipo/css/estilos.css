@@ -1,0 +1,491 @@
+/* =========================================================
+   Sistema de Ventas - Hoja de estilos principal
+   Paleta:
+     Azul oscuro:  #0F172A (menú lateral)
+     Azul primario:#2563EB / #1D4ED8 (hover)
+     Azul login:   #1E3A8A
+     Verde éxito:  #22C55E
+     Amarillo:     #F59E0B
+     Rojo error:   #EF4444
+     Fondo:        #f2f4f7
+   ========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f2f4f7;
+color:#0F172A;
+}
+
+/* ============================
+   LOGIN / RECUPERAR CONTRASEÑA
+   ============================ */
+.login-body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#1E3A8A;
+}
+
+.login-box{
+background:white;
+padding:40px;
+width:360px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,.3);
+text-align:center;
+}
+
+.login-box h1,
+.login-box h2{
+margin-bottom:20px;
+color:#1E3A8A;
+}
+
+.login-box p{
+color:#555;
+margin-bottom:15px;
+font-size:14px;
+}
+
+/* ============================
+   FORMULARIOS
+   ============================ */
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:14px;
+background:white;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+outline:none;
+border-color:#2563EB;
+box-shadow:0 0 0 2px rgba(37,99,235,.15);
+}
+
+label{
+display:block;
+text-align:left;
+margin-top:8px;
+font-size:13px;
+color:#334155;
+font-weight:bold;
+}
+
+/* ============================
+   BOTONES
+   ============================ */
+button{
+padding:12px;
+width:100%;
+background:#2563EB;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:14px;
+}
+
+button:hover{
+background:#1D4ED8;
+}
+
+.button-link{
+display:block;
+margin:12px 0 8px;
+padding:12px;
+background:#2563EB;
+color:white;
+text-decoration:none;
+border-radius:5px;
+text-align:center;
+}
+
+.button-link:hover{
+background:#1D4ED8;
+}
+
+.small-link{
+display:block;
+margin-top:10px;
+color:#2563EB;
+text-decoration:none;
+font-size:13px;
+}
+
+.small-link:hover{
+text-decoration:underline;
+}
+
+/* ============================
+   LAYOUT PRINCIPAL
+   ============================ */
+.contenedor{
+display:flex;
+min-height:100vh;
+}
+
+.menu{
+width:230px;
+min-height:100vh;
+background:#0F172A;
+padding:20px;
+}
+
+.menu h2{
+color:white;
+margin-bottom:30px;
+font-size:18px;
+}
+
+.menu a{
+display:block;
+color:white;
+text-decoration:none;
+padding:12px;
+margin-bottom:6px;
+border-radius:5px;
+font-size:14px;
+}
+
+.menu a:hover{
+background:#2563EB;
+}
+
+.menu a.activo{
+background:#2563EB;
+}
+
+.menu .separador{
+border:none;
+border-top:1px solid #1e293b;
+margin:15px 0;
+}
+
+.menu .cerrar-sesion{
+background:#EF4444;
+margin-top:20px;
+}
+
+.menu .cerrar-sesion:hover{
+background:#b91c1c;
+}
+
+.contenido{
+flex:1;
+padding:30px;
+}
+
+.encabezado{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.encabezado h1{
+color:#0F172A;
+}
+
+.usuario-actual{
+font-size:14px;
+color:#334155;
+}
+
+/* ============================
+   TARJETAS (DASHBOARD)
+   ============================ */
+.cards{
+display:flex;
+gap:20px;
+margin:20px 0;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:25px;
+flex:1;
+min-width:200px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.card h2{
+color:#2563EB;
+margin-bottom:5px;
+}
+
+.card p{
+color:#64748b;
+font-size:14px;
+}
+
+/* ============================
+   TABLAS
+   ============================ */
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+box-shadow:0 0 10px rgba(0,0,0,.05);
+border-radius:8px;
+overflow:hidden;
+}
+
+table th{
+background:#2563EB;
+color:white;
+padding:12px;
+text-align:center;
+}
+
+table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+font-size:14px;
+}
+
+table tr:last-child td{
+border-bottom:none;
+}
+
+table tr:hover td{
+background:#f8fafc;
+}
+
+.vacio{
+text-align:center;
+padding:20px;
+color:#64748b;
+font-style:italic;
+}
+
+/* ============================
+   BOTONES DE ACCIÓN
+   ============================ */
+.nuevo{
+width:auto;
+padding:10px 20px;
+background:#22C55E;
+margin-bottom:15px;
+}
+
+.nuevo:hover{
+background:#16A34A;
+}
+
+.editar{
+background:#F59E0B;
+width:80px;
+padding:6px;
+font-size:13px;
+margin:0 3px;
+}
+
+.editar:hover{
+background:#d97706;
+}
+
+.eliminar{
+background:#EF4444;
+width:80px;
+padding:6px;
+font-size:13px;
+margin:0 3px;
+}
+
+.eliminar:hover{
+background:#b91c1c;
+}
+
+.secundario{
+background:#64748b;
+}
+
+.secundario:hover{
+background:#475569;
+}
+
+/* ============================
+   FORMULARIO EN LÍNEA (VENTAS)
+   ============================ */
+.form-linea{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:15px;
+align-items:flex-end;
+}
+
+.form-linea > *{
+flex:1;
+min-width:150px;
+margin:0;
+}
+
+.form-linea button{
+flex:0 0 auto;
+width:auto;
+padding:12px 20px;
+}
+
+.total{
+font-size:22px;
+color:#0F172A;
+margin:20px 0;
+text-align:right;
+padding:10px;
+background:white;
+border-radius:5px;
+box-shadow:0 0 5px rgba(0,0,0,.05);
+}
+
+/* ============================
+   MODAL
+   ============================ */
+.modal-fondo{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.modal-fondo.activo{
+display:flex;
+}
+
+.modal{
+background:white;
+padding:30px;
+border-radius:10px;
+width:450px;
+max-width:90%;
+max-height:90vh;
+overflow-y:auto;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+.modal h2{
+color:#1E3A8A;
+margin-bottom:20px;
+}
+
+.modal-botones{
+display:flex;
+gap:10px;
+margin-top:15px;
+}
+
+.modal-botones button{
+flex:1;
+}
+
+/* ============================
+   NOTIFICACIONES (TOAST)
+   ============================ */
+.notificacion{
+position:fixed;
+top:20px;
+right:20px;
+padding:15px 20px;
+border-radius:5px;
+color:white;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+z-index:2000;
+opacity:0;
+transform:translateX(100%);
+transition:all .3s ease;
+max-width:300px;
+}
+
+.notificacion.mostrar{
+opacity:1;
+transform:translateX(0);
+}
+
+.notificacion.exito{
+background:#22C55E;
+}
+
+.notificacion.error{
+background:#EF4444;
+}
+
+.notificacion.info{
+background:#2563EB;
+}
+
+/* ============================
+   BADGES (ESTADOS / ROLES)
+   ============================ */
+.badge{
+display:inline-block;
+padding:4px 10px;
+border-radius:12px;
+font-size:12px;
+color:white;
+}
+
+.badge.activo{ background:#22C55E; }
+.badge.inactivo{ background:#EF4444; }
+.badge.admin{ background:#1E3A8A; }
+.badge.vendedor{ background:#2563EB; }
+.badge.almacen{ background:#F59E0B; }
+
+/* ============================
+   FILTROS / BARRA DE BÚSQUEDA
+   ============================ */
+.barra-acciones{
+display:flex;
+gap:10px;
+margin-bottom:15px;
+flex-wrap:wrap;
+align-items:center;
+}
+
+.barra-acciones input,
+.barra-acciones select{
+flex:1;
+min-width:200px;
+margin:0;
+}
+
+.barra-acciones .nuevo{
+margin:0;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width:768px){
+.contenedor{ flex-direction:column; }
+.menu{ width:100%; min-height:auto; }
+.form-linea{ flex-direction:column; }
+.form-linea > *{ width:100%; }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recuperar Contraseña - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="login-body">
+
+<div class="login-box">
+    <h2>Recuperar Contraseña</h2>
+    <p>Ingresa tu correo y te enviaremos un enlace para restablecerla.</p>
+
+    <form id="formRecuperar">
+        <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <button type="submit">Enviar Enlace</button>
+    </form>
+
+    <br>
+    <a href="login.html" class="small-link">Volver al Login</a>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/ui.js"></script>
+<script>
+    document.getElementById('formRecuperar').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const correo = document.getElementById('correo').value.trim();
+
+        // Cuando exista backend, aquí se dispara el envío del correo real (SMTP / Mailer)
+        const ok = await DB.solicitarRecuperacion(correo);
+        if(ok){
+            UI.notificar('Enlace enviado. Revisa tu correo.', 'exito');
+            setTimeout(() => window.location.href = 'login.html', 1200);
+        }else{
+            UI.notificar('El correo no está registrado', 'error');
+        }
+    });
+</script>
+
+</body>
+</html>

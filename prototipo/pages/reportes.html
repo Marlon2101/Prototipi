@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reportes - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <nav class="menu" id="menu"></nav>
+
+    <main class="contenido">
+
+        <div class="encabezado">
+            <h1>Reportes de Ventas</h1>
+            <span class="usuario-actual" id="usuarioActual"></span>
+        </div>
+
+        <div class="form-linea">
+            <div>
+                <label>Desde</label>
+                <input type="date" id="fechaDesde">
+            </div>
+            <div>
+                <label>Hasta</label>
+                <input type="date" id="fechaHasta">
+            </div>
+            <button type="button" id="btnFiltrar">Filtrar</button>
+            <button type="button" class="secundario" id="btnLimpiar">Limpiar</button>
+            <button type="button" class="nuevo" id="btnExportar">Exportar CSV</button>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h2 id="totalVentas">$0.00</h2>
+                <p>Total del período</p>
+            </div>
+            <div class="card">
+                <h2 id="cantidadVentas">0</h2>
+                <p>Transacciones</p>
+            </div>
+            <div class="card">
+                <h2 id="ticketPromedio">$0.00</h2>
+                <p>Ticket promedio</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Vendedor</th>
+                    <th>Productos</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tablaReporte">
+                <tr><td colspan="6" class="vacio">Cargando...</td></tr>
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/reportes.js"></script>
+
+</body>
+</html>

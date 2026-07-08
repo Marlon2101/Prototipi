@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuración - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <nav class="menu" id="menu"></nav>
+
+    <main class="contenido">
+
+        <div class="encabezado">
+            <h1>Configuración del Sistema</h1>
+            <span class="usuario-actual" id="usuarioActual"></span>
+        </div>
+
+        <div class="cards">
+            <div class="card" style="text-align:left; max-width:560px;">
+                <h2 style="margin-bottom:15px;">Datos de la empresa</h2>
+
+                <form id="formConfig">
+                    <label>Nombre de la empresa</label>
+                    <input type="text" id="nombreEmpresa" required maxlength="80">
+
+                    <label>Dirección</label>
+                    <input type="text" id="direccion" maxlength="120">
+
+                    <label>Teléfono</label>
+                    <input type="text" id="telefono" maxlength="20">
+
+                    <label>Moneda (código ISO)</label>
+                    <input type="text" id="moneda" required maxlength="5">
+
+                    <label>Símbolo de moneda</label>
+                    <input type="text" id="simbolo" required maxlength="3">
+
+                    <label>Impuesto por defecto (%)</label>
+                    <input type="number" id="impuesto" required min="0" max="100" step="0.01">
+
+                    <button type="submit" style="margin-top:15px;">Guardar configuración</button>
+                </form>
+            </div>
+
+            <div class="card" style="text-align:left; max-width:400px;">
+                <h2 style="margin-bottom:15px;">Datos del prototipo</h2>
+                <p style="color:#64748b; font-size:14px; margin-bottom:15px;">
+                    El prototipo guarda toda la información en el navegador (localStorage).
+                    Puedes restablecer los datos originales cuando quieras.
+                </p>
+
+                <button type="button" class="eliminar" id="btnRestablecer" style="width:auto; padding:10px 15px;">
+                    Restablecer datos de ejemplo
+                </button>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/configuracion.js"></script>
+
+</body>
+</html>

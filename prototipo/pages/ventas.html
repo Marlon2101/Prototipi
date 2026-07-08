@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventas - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <nav class="menu" id="menu"></nav>
+
+    <main class="contenido">
+
+        <div class="encabezado">
+            <h1>Registrar Venta</h1>
+            <span class="usuario-actual" id="usuarioActual"></span>
+        </div>
+
+        <div class="form-linea">
+            <div style="flex:2;">
+                <label>Cliente</label>
+                <select id="cliente">
+                    <option value="">-- Selecciona un cliente --</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-linea">
+            <div style="flex:2;">
+                <label>Producto</label>
+                <select id="producto">
+                    <option value="">-- Selecciona un producto --</option>
+                </select>
+            </div>
+            <div>
+                <label>Cantidad</label>
+                <input type="number" id="cantidad" value="1" min="1">
+            </div>
+            <button type="button" id="btnAgregar">Agregar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaDetalles">
+                <tr><td colspan="5" class="vacio">Sin productos agregados.</td></tr>
+            </tbody>
+        </table>
+
+        <div class="total">
+            <span>Subtotal: <strong id="subtotal">$0.00</strong></span> &nbsp;|&nbsp;
+            <span>Impuesto (<span id="tasaImpuesto">0</span>%): <strong id="impuesto">$0.00</strong></span> &nbsp;|&nbsp;
+            <span>Total: <strong id="totalVenta">$0.00</strong></span>
+        </div>
+
+        <div class="form-linea">
+            <button type="button" class="secundario" id="btnCancelar">Cancelar</button>
+            <button type="button" class="nuevo" id="btnFinalizar">Finalizar Venta</button>
+        </div>
+
+        <h2 style="margin-top:40px;">Historial de Ventas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Vendedor</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tablaHistorial">
+                <tr><td colspan="5" class="vacio">Sin ventas registradas.</td></tr>
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/ventas.js"></script>
+
+</body>
+</html>

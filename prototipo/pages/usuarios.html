@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usuarios - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <nav class="menu" id="menu"></nav>
+
+    <main class="contenido">
+
+        <div class="encabezado">
+            <h1>Usuarios</h1>
+            <span class="usuario-actual" id="usuarioActual"></span>
+        </div>
+
+        <div class="barra-acciones">
+            <input type="text" id="buscador" placeholder="Buscar por nombre, usuario o correo">
+            <select id="filtroRol">
+                <option value="">Todos los roles</option>
+                <option value="admin">Administrador</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="almacen">Almacén</option>
+            </select>
+            <button class="nuevo" id="btnNuevo">+ Nuevo Usuario</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaUsuarios">
+                <tr><td colspan="7" class="vacio">Cargando...</td></tr>
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+<div class="modal-fondo" id="modalUsuario">
+    <div class="modal">
+        <h2 id="tituloModal">Nuevo Usuario</h2>
+
+        <form id="formUsuario">
+            <input type="hidden" id="usuarioId">
+
+            <label>Nombre completo</label>
+            <input type="text" id="nombre" required maxlength="80">
+
+            <label>Usuario</label>
+            <input type="text" id="usuario" required maxlength="30" autocomplete="off">
+
+            <label>Correo</label>
+            <input type="email" id="correo" required maxlength="80">
+
+            <label>Contraseña <small id="hintPassword"></small></label>
+            <input type="password" id="password" maxlength="60" autocomplete="new-password">
+
+            <label>Rol</label>
+            <select id="rol" required>
+                <option value="admin">Administrador</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="almacen">Almacén</option>
+            </select>
+
+            <label>Estado</label>
+            <select id="estado" required>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+            </select>
+
+            <div class="modal-botones">
+                <button type="button" class="secundario" onclick="UI.cerrarModal('modalUsuario')">Cancelar</button>
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/usuarios.js"></script>
+
+</body>
+</html>

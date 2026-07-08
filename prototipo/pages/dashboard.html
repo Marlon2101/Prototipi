@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <!-- Menú lateral renderizado por ui.js -->
+    <nav class="menu" id="menu"></nav>
+
+    <main class="contenido">
+
+        <div class="encabezado">
+            <h1>Panel Principal</h1>
+            <span class="usuario-actual" id="usuarioActual"></span>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h2 id="ventasHoy">$0</h2>
+                <p>Ventas Hoy</p>
+            </div>
+            <div class="card">
+                <h2 id="transaccionesHoy">0</h2>
+                <p>Transacciones Hoy</p>
+            </div>
+            <div class="card">
+                <h2 id="totalProductos">0</h2>
+                <p>Productos</p>
+            </div>
+            <div class="card">
+                <h2 id="totalClientes">0</h2>
+                <p>Clientes</p>
+            </div>
+            <div class="card">
+                <h2 id="stockBajo">0</h2>
+                <p>Stock Bajo</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top:20px;">Últimas Ventas</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Vendedor</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tablaUltimasVentas">
+                <tr><td colspan="5" class="vacio">Cargando...</td></tr>
+            </tbody>
+        </table>
+
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

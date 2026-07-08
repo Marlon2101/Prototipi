@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil - Sistema Ventas</title>
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <nav class="menu" id="menu"></nav>
+
+    <main class="contenido">
+
+        <div class="encabezado">
+            <h1>Mi Perfil</h1>
+            <span class="usuario-actual" id="usuarioActual"></span>
+        </div>
+
+        <div class="cards">
+            <div class="card" style="text-align:left; max-width:520px;">
+                <h2 style="margin-bottom:15px;">Datos personales</h2>
+
+                <form id="formPerfil">
+                    <label>Nombre completo</label>
+                    <input type="text" id="nombre" required maxlength="80">
+
+                    <label>Usuario</label>
+                    <input type="text" id="usuario" disabled>
+
+                    <label>Correo</label>
+                    <input type="email" id="correo" required maxlength="80">
+
+                    <label>Rol</label>
+                    <input type="text" id="rol" disabled>
+
+                    <button type="submit" style="margin-top:15px;">Guardar cambios</button>
+                </form>
+            </div>
+
+            <div class="card" style="text-align:left; max-width:520px;">
+                <h2 style="margin-bottom:15px;">Cambiar contraseña</h2>
+
+                <form id="formPassword">
+                    <label>Contraseña actual</label>
+                    <input type="password" id="passActual" required autocomplete="current-password">
+
+                    <label>Nueva contraseña</label>
+                    <input type="password" id="passNueva" required minlength="6" autocomplete="new-password">
+
+                    <label>Confirmar nueva contraseña</label>
+                    <input type="password" id="passConfirmar" required minlength="6" autocomplete="new-password">
+
+                    <button type="submit" style="margin-top:15px;">Actualizar contraseña</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/perfil.js"></script>
+
+</body>
+</html>
